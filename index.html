@@ -379,6 +379,25 @@
   .speaker-info h3{font-size:20px;color:var(--ink);margin-bottom:4px;font-weight:700}
   .speaker-info .name-en{font-size:11px;color:var(--ink-mute);letter-spacing:.12em;margin-bottom:14px}
   .speaker-info p{font-size:13.5px;color:var(--ink-soft);line-height:1.95}
+  .speaker-message{
+    position:relative;
+    background:var(--bg);
+    border:1px solid var(--line-soft);
+    border-left:3px solid var(--accent);
+    padding:16px 18px;
+    margin:6px 0 22px;
+    font-size:13.5px;
+    color:var(--ink-2);
+    line-height:2.0;
+    letter-spacing:.04em;
+    border-radius:0 10px 10px 0;
+  }
+  .speaker-message::before{
+    content:"“";
+    position:absolute;left:8px;top:-4px;
+    font-family:Georgia,serif;font-size:28px;color:var(--line-strong);line-height:1;
+  }
+
   .speaker-data{display:grid;gap:0;border-top:1px solid var(--line-soft);margin-top:6px}
   .speaker-data .row{
     display:grid;grid-template-columns:80px 1fr;gap:14px;
@@ -959,8 +978,8 @@
         <div class="role">HOST / PINT HOME</div>
         <h3>石井 優香</h3>
         <div class="name-en">YUKA ISHII</div>
+        <p class="speaker-message">一般論的な説明だけでなく、暮らしや子育てといった私なりの観点で、それぞれどんな考え方、捉え方があるかという内容で構成しています。少人数制で適宜コメントもいただき嬉しいので、毎回開催を楽しみにしています☺️</p>
         <dl class="speaker-data">
-          <div class="row"><dt>学歴</dt><dd>同志社国際高等学校／大阪市立大学</dd></div>
           <div class="row"><dt>経歴</dt><dd>
             <span class="yr">2014〜</span>グッドルーム株式会社<br>
             <span class="yr">2022〜</span>リブ・コンサルティング株式会社<br>
