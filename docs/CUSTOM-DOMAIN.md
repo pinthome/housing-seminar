@@ -80,7 +80,7 @@ seminar.pinthome.com
 ## 6. GitHub Pages 側の設定
 
 ```bash
-gh api -X PUT repos/shinyan-byte/pint-home-housing-study/pages \
+gh api -X PUT repos/pinthome/housing-seminar/pages \
   --input - <<< '{"cname":"seminar.pinthome.com"}'
 ```
 
@@ -92,11 +92,11 @@ DNS伝搬後（数分〜最大24時間）、GitHub PagesがLet's EncryptでTLS�
 
 ```bash
 # 検証
-gh api repos/shinyan-byte/pint-home-housing-study/pages
+gh api repos/pinthome/housing-seminar/pages
 # → "https_certificate" が "approved" になればOK
 
 # Enforce HTTPSを有効化
-gh api -X PUT repos/shinyan-byte/pint-home-housing-study/pages \
+gh api -X PUT repos/pinthome/housing-seminar/pages \
   --input - <<< '{"https_enforced":true}'
 ```
 
@@ -128,11 +128,11 @@ curl -sI https://seminar.pinthome.com | head -5
 
 ```bash
 # GitHub Pages からドメイン削除
-gh api -X PUT repos/shinyan-byte/pint-home-housing-study/pages \
+gh api -X PUT repos/pinthome/housing-seminar/pages \
   --input - <<< '{"cname":null}'
 
 # CNAMEファイルを削除
 rm CNAME && git add -A && git commit -m "Remove custom domain" && git push
 ```
 
-`https://shinyan-byte.github.io/pint-home-housing-study/` に戻ります。
+`https://pinthome.github.io/housing-seminar/` に戻ります。

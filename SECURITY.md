@@ -2,7 +2,7 @@
 
 ## 脆弱性のご報告
 
-本リポジトリおよび公開LP（https://shinyan-byte.github.io/pint-home-housing-study/）に関するセキュリティ上の問題を発見された場合は、**公開Issueを作成せず**、以下のいずれかの方法でご報告ください。
+本リポジトリおよび公開LP（https://pinthome.github.io/housing-seminar/）に関するセキュリティ上の問題を発見された場合は、**公開Issueを作成せず**、以下のいずれかの方法でご報告ください。
 
 ### 1. GitHub の Private Vulnerability Reporting（推奨）
 
@@ -11,7 +11,7 @@
 ### 2. メール
 
 - 宛先: `shinya.n@pint.co.jp`
-- 件名に `[Security] pint-home-housing-study` を含めてください
+- 件名に `[Security] housing-seminar` を含めてください
 - 含めていただきたい内容:
   - 問題の概要
   - 再現手順 / PoC

@@ -1,6 +1,6 @@
 Contact: mailto:shinya.n@pint.co.jp
-Contact: https://github.com/shinyan-byte/pint-home-housing-study/security/advisories/new
+Contact: https://github.com/pinthome/housing-seminar/security/advisories/new
 Expires: 2027-05-01T13:50:26.000Z
 Preferred-Languages: ja, en
-Canonical: https://shinyan-byte.github.io/pint-home-housing-study/.well-known/security.txt
-Policy: https://github.com/shinyan-byte/pint-home-housing-study/blob/main/SECURITY.md
+Canonical: https://pinthome.github.io/housing-seminar/.well-known/security.txt
+Policy: https://github.com/pinthome/housing-seminar/blob/main/SECURITY.md
