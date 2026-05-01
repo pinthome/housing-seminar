@@ -475,12 +475,33 @@
 
   /* ===== Footer ===== */
   footer{
-    background:#fff;color:var(--ink-mute);padding:36px 0 40px;font-size:12px;
-    border-top:1px solid var(--line-soft);
+    background:#fff;color:var(--ink-mute);padding:64px 0 48px;font-size:12px;
+    border-top:1px solid var(--line-soft);text-align:center;
   }
-  footer .container{display:flex;flex-direction:column;gap:8px}
-  footer .brand-f{color:var(--ink);font-size:13px;font-weight:600}
-  footer .copyright{font-size:11px;color:var(--ink-mute);margin-top:6px;letter-spacing:.04em}
+  footer .container{display:flex;flex-direction:column;align-items:center;gap:0}
+  .f-brand{
+    display:flex;align-items:baseline;justify-content:center;gap:.04em;
+    font-size:22px;font-weight:600;letter-spacing:.32em;
+    color:var(--ink);margin-right:-.32em;
+  }
+  .f-brand .amp{color:var(--accent);font-weight:500;margin:0 .12em;letter-spacing:0}
+  .f-sub{
+    margin-top:14px;font-size:12px;letter-spacing:.42em;color:var(--ink-soft);
+    font-weight:600;
+  }
+  .f-tagline{
+    margin-top:8px;font-size:13px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.85;
+  }
+  .f-divider{
+    width:36px;height:1px;background:var(--line-strong);margin:24px auto;
+  }
+  .f-desc{
+    font-size:12px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.85;
+    max-width:520px;
+  }
+  .f-copy{
+    margin-top:28px;font-size:11px;color:var(--ink-mute);letter-spacing:.16em;
+  }
 
   /* ============================
      Tablet: 600px+
@@ -819,7 +840,7 @@
             <span class="yr">2022〜</span>リブ・コンサルティング株式会社<br>
             <span class="yr">2024〜</span>INA&amp;Associates株式会社／PINT HOME
           </dd></div>
-          <div class="row"><dt>家族</dt><dd>夫・4歳息子・2歳娘・猫（マンチカン）</dd></div>
+          <div class="row"><dt>家族</dt><dd>夫・未就学児2人・猫（マンチカン）</dd></div>
           <div class="row"><dt>出身</dt><dd>京都</dd></div>
           <div class="row"><dt>住まい</dt><dd>東京 47㎡</dd></div>
           <div class="row"><dt>資格</dt><dd>宅地建物取引士</dd></div>
@@ -950,8 +971,14 @@
 <!-- ===== Footer ===== -->
 <footer>
   <div class="container">
-    <div class="brand-f">PINT HOME ／ 石井 優香</div>
-    <div>お問い合わせ：LINE公式アカウント</div>
+    <div class="f-brand">
+      <span>INA</span><span class="amp">&amp;</span><span>Associates</span>
+    </div>
+    <div class="f-sub">PINT HOME</div>
+    <div class="f-tagline">子育て家族のマイホーム探しに、伴走します</div>
+    <div class="f-divider" aria-hidden="true"></div>
+    <div class="f-desc">PINT HOMEは、INA&amp;Associates株式会社が運営する伴走型仲介ブランドです。</div>
+    <div class="f-copy">© 2026 INA&amp;Associates Inc.</div>
   </div>
 </footer>
 
