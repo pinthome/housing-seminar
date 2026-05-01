@@ -184,6 +184,42 @@
     border-color:#fff;color:#fff;
   }
 
+  /* ===== Stats (KPI) ===== */
+  .stats{
+    background:var(--bg);
+    border-bottom:1px solid var(--line-soft);
+    padding:56px 0;
+  }
+  .stats-grid{
+    display:grid;grid-template-columns:1fr;gap:36px;
+    text-align:center;
+  }
+  .stats-item{padding:0 12px}
+  .stats-label{
+    font-size:11px;letter-spacing:.28em;color:var(--ink-mute);font-weight:700;
+    margin-bottom:14px;
+  }
+  .stats-label::before{content:"— ";color:var(--accent)}
+  .stats-value{
+    display:inline-flex;align-items:baseline;gap:4px;color:var(--ink);
+    margin-bottom:14px;line-height:1;
+  }
+  .stats-value .num{
+    font-size:56px;font-weight:700;letter-spacing:-.02em;
+    font-feature-settings:"tnum" 1;
+    color:var(--ink);
+  }
+  .stats-value .unit{
+    font-size:18px;font-weight:600;color:var(--ink-soft);letter-spacing:.04em;
+  }
+  .stats-note{
+    font-size:11px;color:var(--ink-mute);letter-spacing:.04em;line-height:1.7;
+    max-width:340px;margin:0 auto;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .stats-value .num{transition:opacity .3s}
+  }
+
   /* ===== Section common ===== */
   section{padding:64px 0;position:relative}
   .sec-label{
@@ -508,6 +544,14 @@
      ============================ */
   @media (min-width: 600px){
     body{font-size:15.5px}
+    .stats{padding:80px 0}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:48px}
+    .stats-grid > .stats-item:first-child{
+      border-right:1px solid var(--line-soft);
+    }
+    .stats-value .num{font-size:64px}
+    .stats-value .unit{font-size:20px}
+
     .hero{padding:160px 0 56px;min-height:700px}
     h1.hero-title{font-size:38px}
     .hero-lead{font-size:14.5px;max-width:540px}
@@ -533,6 +577,9 @@
      ============================ */
   @media (min-width: 960px){
     .site-inner{height:64px;padding:0 24px}
+    .stats{padding:104px 0}
+    .stats-value .num{font-size:76px}
+
     .brand{font-size:15px}
     .nav-cta{padding:10px 18px;font-size:13px}
     .hero{padding:200px 0 80px;min-height:760px}
@@ -603,6 +650,28 @@
     </ul>
     <div class="cta-row">
       <a class="btn-ghost" href="#seminars">開催スケジュールを見る ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stats-item">
+        <div class="stats-label">総参加者数</div>
+        <div class="stats-value">
+          <span class="num" data-target="112" aria-live="polite">0</span><span class="unit">組</span>
+        </div>
+        <div class="stats-note">※ 2025年5月〜 不定期開催の累計</div>
+      </div>
+      <div class="stats-item">
+        <div class="stats-label">満足度</div>
+        <div class="stats-value">
+          <span class="num" data-target="100" aria-live="polite">0</span><span class="unit">%</span>
+        </div>
+        <div class="stats-note">※ アンケート回答者のうち「満足」「とても満足」と回答した方の割合</div>
+      </div>
     </div>
   </div>
 </section>

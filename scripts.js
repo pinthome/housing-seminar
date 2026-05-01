@@ -32,4 +32,39 @@
       if (e.target === dlg) dlg.close();
     });
   });
+
+  /* ─── Counter animation for .stats numbers ─── */
+  function animateCounter(el, target, duration) {
+    var start = performance.now();
+    function tick(now) {
+      var t = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      el.textContent = Math.round(target * eased);
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var counters = document.querySelectorAll('.stats-value .num[data-target]');
+  if (counters.length) {
+    var prefersReducedMotion = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      counters.forEach(function (el) {
+        el.textContent = el.getAttribute('data-target');
+      });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+          animateCounter(el, target, 1500);
+          io.unobserve(el);
+        });
+      }, { threshold: 0.4 });
+      counters.forEach(function (el) { io.observe(el); });
+    }
+  }
 })();
