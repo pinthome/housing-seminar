@@ -1,9 +1,22 @@
 /* PINT HOME — seminar LP behaviors
  * - Open reserve modal on [data-modal] click
  * - Close on .reserve-close click / backdrop click / Esc (native dialog)
+ * - Stats counter animation
+ * - Sticky header scroll-state toggle
  */
 (function () {
   'use strict';
+
+  /* ─── Sticky header: toggle .scrolled after some scroll ─── */
+  var header = document.getElementById('site-header');
+  if (header) {
+    var setScrolled = function () {
+      if (window.scrollY > 4) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    setScrolled();
+    window.addEventListener('scroll', setScrolled, { passive: true });
+  }
 
   function openModalById(id) {
     var dlg = document.getElementById(id);
