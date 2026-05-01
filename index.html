@@ -522,21 +522,44 @@
   }
 
   /* ===== Reserve modals ===== */
+  /* Mobile-first: bottom sheet that slides up */
   .reserve-modal{
     border:0;padding:0;background:#fff;color:var(--ink);
-    border-radius:14px;width:min(680px, calc(100% - 28px));
-    box-shadow:0 24px 80px rgba(15,23,42,.35);
-    max-height:calc(100dvh - 32px);
+    box-shadow:0 -12px 40px rgba(15,23,42,.25);
+    width:100%;max-width:100%;
+    border-radius:18px 18px 0 0;
+    max-height:90dvh;
     overflow:hidden;
+    position:fixed;
+    left:0;right:0;bottom:0;top:auto;
+    margin:0;
   }
   .reserve-modal::backdrop{
     background:rgba(15,23,42,.55);
     backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
   }
-  .reserve-modal[open]{animation:reserve-in .22s ease both}
-  @keyframes reserve-in{
-    from{opacity:0;transform:translateY(8px) scale(.98)}
-    to{opacity:1;transform:translateY(0) scale(1)}
+  .reserve-modal[open]{animation:reserve-up .26s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes reserve-up{
+    from{transform:translateY(100%)}
+    to{transform:translateY(0)}
+  }
+  /* Tablet+ : centered modal */
+  @media (min-width:640px){
+    .reserve-modal{
+      width:min(680px, calc(100% - 28px));
+      max-width:680px;
+      max-height:calc(100dvh - 48px);
+      border-radius:14px;
+      box-shadow:0 24px 80px rgba(15,23,42,.35);
+      top:50%;left:50%;right:auto;bottom:auto;
+      transform:translate(-50%,-50%);
+      margin:0;
+    }
+    .reserve-modal[open]{animation:reserve-pop .22s ease both}
+    @keyframes reserve-pop{
+      from{opacity:0;transform:translate(-50%,-50%) scale(.96)}
+      to{opacity:1;transform:translate(-50%,-50%) scale(1)}
+    }
   }
   .reserve-head{
     position:sticky;top:0;z-index:1;
