@@ -2,3 +2,6 @@
 *.tmp
 *.log
 .vscode/
+
+# Local source images / working files (not committed)
+_source/
