@@ -8,6 +8,13 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#0f172a">
 
+<!-- Security headers (meta-equivalent) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://autosns.jp https://il9fo0d8.autosns.app https://cdn.jsdelivr.net https://vjs.zencdn.net; style-src 'self' 'unsafe-inline' https://vjs.zencdn.net https://autosns.jp https://il9fo0d8.autosns.app; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https: blob:; connect-src 'self' https:; frame-src 'self' https://autosns.jp https://il9fo0d8.autosns.app https://*.autosns.app; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="2026年5月｜オンライン住宅勉強会｜PINT HOME 石井優香">
@@ -956,7 +963,7 @@
       <small>5月14日（木） 12:00 – 13:00</small>
       VOL.01 はじめての住宅購入勉強会
     </h3>
-    <button class="reserve-close" type="button" aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
+    <button class="reserve-close" type="button" aria-label="閉じる">×</button>
   </div>
   <div class="reserve-body">
     <div class="proline-embed-calendar" data-id="sjWJCp1SPM"></div>
@@ -968,7 +975,7 @@
       <small>5月15日（金） 12:00 – 13:30</small>
       VOL.02 住宅ローンの考え方勉強会
     </h3>
-    <button class="reserve-close" type="button" aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
+    <button class="reserve-close" type="button" aria-label="閉じる">×</button>
   </div>
   <div class="reserve-body">
     <div class="proline-embed-calendar" data-id="N2JkCEiHel"></div>
@@ -980,7 +987,7 @@
       <small>5月19日（火） 12:00 – 13:00</small>
       VOL.03 選択肢を知るための築古勉強会
     </h3>
-    <button class="reserve-close" type="button" aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
+    <button class="reserve-close" type="button" aria-label="閉じる">×</button>
   </div>
   <div class="reserve-body">
     <div class="proline-embed-calendar" data-id="FNZY6aF7Gd"></div>
@@ -992,28 +999,13 @@
       <small>5月21日（木） 12:00 – 13:00</small>
       VOL.04 住宅購入者向け 住み替え勉強会
     </h3>
-    <button class="reserve-close" type="button" aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
+    <button class="reserve-close" type="button" aria-label="閉じる">×</button>
   </div>
   <div class="reserve-body">
     <div class="proline-embed-calendar" data-id="aeLlaQIFHb"></div>
   </div>
 </dialog>
 <script src="https://il9fo0d8.autosns.app/proline-embed-calendar/js"></script>
-<script>
-  document.addEventListener('click', function(e){
-    const trigger = e.target.closest('[data-modal]');
-    if(!trigger) return;
-    e.preventDefault();
-    const id = trigger.getAttribute('data-modal');
-    const dlg = document.getElementById(id);
-    if(dlg && typeof dlg.showModal === 'function') dlg.showModal();
-  });
-  // Click on backdrop to close
-  document.querySelectorAll('dialog.reserve-modal').forEach(function(dlg){
-    dlg.addEventListener('click', function(e){
-      if(e.target === dlg) dlg.close();
-    });
-  });
-</script>
+<script defer src="./scripts.js"></script>
 </body>
 </html>
