@@ -398,17 +398,21 @@
     text-align:right;
   }
 
-  .speaker-data{display:grid;gap:0;border-top:1px solid var(--line-soft);margin-top:6px}
+  .speaker-data{
+    display:grid;gap:0;border-top:1px solid var(--line-soft);margin-top:6px;
+    text-align:left;
+  }
   .speaker-data .row{
     display:grid;grid-template-columns:80px 1fr;gap:14px;
     padding:12px 0;border-bottom:1px solid var(--line-soft);
   }
   .speaker-data dt{
     font-size:11px;color:var(--ink-mute);font-weight:600;letter-spacing:.18em;
-    line-height:1.85;
+    line-height:1.85;text-align:left;
   }
   .speaker-data dd{
     font-size:13px;color:var(--ink-2);line-height:1.85;letter-spacing:.02em;
+    text-align:left;
   }
   .speaker-data dd .yr{color:var(--ink-mute);font-weight:600;margin-right:6px;font-feature-settings:"tnum" 1}
 
