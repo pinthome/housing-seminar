@@ -53,7 +53,7 @@ GitHub Pagesに独自サブドメイン（例：`seminar.example.com`）を割�
 
 | Type | Name | Value | TTL |
 |---|---|---|---|
-| CNAME | `seminar` | `shinyan-byte.github.io` | Auto / 3600 |
+| CNAME | `seminar` | `pinthome.github.io` | Auto / 3600 |
 
 **注意**：
 - ルートドメイン（`@`）には CNAMEを設定できません。ルート利用なら **Aレコード4本**を以下のIPに設定してください（GitHub Pages公式）：
