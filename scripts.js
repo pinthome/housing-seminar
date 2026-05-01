@@ -46,6 +46,50 @@
     });
   });
 
+  /* ─── Scroll-in animations ─── */
+  var prefersReducedMotionScroll =
+    window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotionScroll && 'IntersectionObserver' in window) {
+    // Single-element fade-up
+    var animSelectors = [
+      '.section-title',
+      '.sec-label',
+      '.section-lead',
+      '.story p',
+      '.seminar',
+      '.speaker-card',
+      '.bonus-box',
+      '.info-card',
+      '.movie-item',
+      '.final-cta-grid > *',
+      '.cta-date',
+      'details.q'
+    ];
+    document.querySelectorAll(animSelectors.join(',')).forEach(function (el) {
+      el.classList.add('anim');
+    });
+
+    // Stagger groups: add class to parent that has child elements to reveal
+    var staggerSelectors = ['.why-grid', '.voice-list', '.cta-dates'];
+    document.querySelectorAll(staggerSelectors.join(',')).forEach(function (el) {
+      el.classList.add('anim-stagger');
+    });
+
+    var animIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        animIO.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+
+    document.querySelectorAll('.anim, .anim-stagger').forEach(function (el) {
+      animIO.observe(el);
+    });
+  }
+
   /* ─── Counter animation for .stats numbers ─── */
   function animateCounter(el, target, duration) {
     var start = performance.now();
