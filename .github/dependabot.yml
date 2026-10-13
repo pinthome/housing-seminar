@@ -9,6 +9,9 @@ updates:
       time: "09:00"
       timezone: "Asia/Tokyo"
     groups:
+      # CodeQL の init と analyze は同じ版でないと動かないので、メジャー更新も含めて1つの PR にまとめる
+      codeql-action:
+        patterns: ["github/codeql-action*"]
       actions-minor-and-patch:
         applies-to: version-updates
         update-types: ["minor", "patch"]
